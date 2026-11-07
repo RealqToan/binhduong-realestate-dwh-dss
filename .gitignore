@@ -1,1 +1,10 @@
-datas/vietnam_real_estate.csv
+datas/raw/vietnam_real_estate.csv
+
+# Visual Studio & SSIS temp files
+.vs/
+*.user
+*.suo
+*.log
+*.tmp
+bin/
+obj/

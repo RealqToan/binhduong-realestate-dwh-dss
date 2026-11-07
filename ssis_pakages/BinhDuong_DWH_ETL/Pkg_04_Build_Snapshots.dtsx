@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/7/2026 7:02:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="REALQTOAN"
+  DTS:CreatorName="REALQTOAN\toann"
+  DTS:DTSID="{3763F753-6200-4685-A1A4-8059B884FF24}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{35231D78-3895-437B-9DAC-F74E8493D3C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>
