@@ -8,3 +8,5 @@ datas/raw/vietnam_real_estate.csv
 *.tmp
 bin/
 obj/
+*.dtproj.user
+UpgradeLog.htm
