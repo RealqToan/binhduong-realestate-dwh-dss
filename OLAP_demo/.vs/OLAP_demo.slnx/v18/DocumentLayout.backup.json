@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\DW Binh Duong Real Estate.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|solutionrelative:DW Binh Duong Real Estate.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|solutionrelative:Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FAD11AB8-8186-E71C-80D4-2BDB8FC57EF8}|OLAP_demo.dwproj|solutionrelative:Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DW Binh Duong Real Estate.cube [Design]",
+              "DocumentMoniker": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\DW Binh Duong Real Estate.cube",
+              "RelativeDocumentMoniker": "DW Binh Duong Real Estate.cube",
+              "ToolTip": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\DW Binh Duong Real Estate.cube [Design]",
+              "RelativeToolTip": "DW Binh Duong Real Estate.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-18T08:43:35.816Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Date.dim",
+              "RelativeDocumentMoniker": "Dim Date.dim",
+              "ToolTip": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Date.dim [Design]",
+              "RelativeToolTip": "Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-18T08:39:35.317Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Location.dim [Design]",
+              "DocumentMoniker": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Location.dim",
+              "RelativeDocumentMoniker": "Dim Location.dim",
+              "ToolTip": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\OLAP_demo\\Dim Location.dim [Design]",
+              "RelativeToolTip": "Dim Location.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-18T08:36:42.253Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
