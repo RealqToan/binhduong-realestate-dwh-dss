@@ -1,0 +1,27 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\SSIS_Project\\Project3\\",
+  "Documents": [],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
