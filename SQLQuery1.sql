@@ -1,39 +1,3 @@
-CREATE DATABASE DW_BinhDuong_RealEstate;
-GO
-
--- 2. Su dung Database
-USE DW_BinhDuong_RealEstate;
-GO
-
--- 3. Kiem tra Database
-SELECT name
-FROM sys.databases
-WHERE name = 'DW_BinhDuong_RealEstate';
-GO
-
--- Tao staging 
-CREATE TABLE Staging_RealEstate (
-    StagingID INT IDENTITY(1,1) PRIMARY KEY,
-    name NVARCHAR(MAX),
-    description NVARCHAR(MAX),
-    property_type_name NVARCHAR(255),
-    province_name NVARCHAR(255),
-    district_name NVARCHAR(255),
-    ward_name NVARCHAR(255),
-    street_name NVARCHAR(255),
-    project_name NVARCHAR(255),
-    price DECIMAL(19,2),
-    area DECIMAL(12,2),
-    frontage_width DECIMAL(10,2),
-    bedroom_count INT,
-    bathroom_count INT,
-    house_direction NVARCHAR(255),
-    full_date DATE,
-    post_hour INT,
-    is_outlier TINYINT
-);
-GO
-
 -- Kiem tra bang
 SELECT * FROM Staging_RealEstate;
 GO
@@ -47,11 +11,6 @@ SELECT
         AS TotalOutliers
 FROM Staging_RealEstate;
 
-
--- 1. Kiểm tra tổng số dòng
-SELECT COUNT(*) AS TotalRows
-FROM Staging_RealEstate;
-
 -- 2. Kiểm tra dữ liệu bị thiếu
 SELECT
     SUM(CASE WHEN name IS NULL OR LTRIM(RTRIM(name)) = '' THEN 1 ELSE 0 END) AS MissingName,
@@ -61,221 +20,16 @@ SELECT
     SUM(CASE WHEN province_name IS NULL OR LTRIM(RTRIM(province_name)) = '' THEN 1 ELSE 0 END) AS MissingProvince
 FROM Staging_RealEstate;
 
--- 1. Dim_Date
-CREATE TABLE dbo.Dim_Date (
-    date_key INT PRIMARY KEY,
-    full_date DATE NULL,
-    day_of_month TINYINT NULL,
-    day_of_week TINYINT NULL,
-    day_name NVARCHAR(20) NULL,
-    week TINYINT NULL,
-    month_num TINYINT NULL,
-    month_name NVARCHAR(20) NULL,
-    quarter_num TINYINT NULL,
-    quarter_name NVARCHAR(20) NULL,
-    year SMALLINT NULL,
-    holiday_name NVARCHAR(50) NULL,
-    is_holiday BIT NULL
-);
-GO
-
--- 2. Dim_Time
-CREATE TABLE dbo.Dim_Time (
-    time_key INT PRIMARY KEY,
-    day_period NVARCHAR(30) NULL
-);
-GO
-
--- 3. Dim_Location
-CREATE TABLE dbo.Dim_Location (
-    location_key INT IDENTITY(1,1) PRIMARY KEY,
-    province_name NVARCHAR(50),
-    district_name NVARCHAR(50),
-    ward_name NVARCHAR(50),
-    street_name NVARCHAR(100)
-);
-GO
-
--- 4. Dim_PropertyType
-CREATE TABLE dbo.Dim_PropertyType (
-    property_type_key INT IDENTITY(1,1) PRIMARY KEY,
-    property_type_name NVARCHAR(50),
-    property_type_group NVARCHAR(50)
-);
-GO
-
--- 5. Dim_Project
-CREATE TABLE dbo.Dim_Project (
-    project_key INT IDENTITY(1,1) PRIMARY KEY,
-    project_name NVARCHAR(100)
-);
-GO
-
--- 6. Dim_Direction
-CREATE TABLE dbo.Dim_Direction (
-    direction_key INT IDENTITY(1,1) PRIMARY KEY,
-    house_direction NVARCHAR(30),
-    direction_group NVARCHAR(30)
-);
-GO
-
--- 7. Dim_Segment
-CREATE TABLE dbo.Dim_Segment (
-    segment_key INT PRIMARY KEY,
-    segment_name NVARCHAR(30),
-    sort_order TINYINT
-);
-GO
-
--- Tạo bảng Fact_Listing
-CREATE TABLE dbo.Fact_Listing (
-    fact_id INT IDENTITY(1,1) PRIMARY KEY,
-
-    date_key INT NOT NULL,
-    time_key INT NOT NULL,
-    location_key INT NOT NULL,
-    property_type_key INT NOT NULL,
-    project_key INT NOT NULL,
-    direction_key INT NOT NULL,
-    segment_key INT NOT NULL,
-
-    price BIGINT NOT NULL,
-    area DECIMAL(12,3) NULL,
-    frontage_width DECIMAL(10,2) NULL,
-    bedroom_count TINYINT NULL,
-    bathroom_count TINYINT NULL,
-
-    total_listings TINYINT NOT NULL DEFAULT 1,
-    is_outlier BIT NOT NULL,
-
-    CONSTRAINT FK_Listing_Date
-        FOREIGN KEY (date_key)
-        REFERENCES dbo.Dim_Date(date_key),
-
-    CONSTRAINT FK_Listing_Time
-        FOREIGN KEY (time_key)
-        REFERENCES dbo.Dim_Time(time_key),
-
-    CONSTRAINT FK_Listing_Location
-        FOREIGN KEY (location_key)
-        REFERENCES dbo.Dim_Location(location_key),
-
-    CONSTRAINT FK_Listing_PropertyType
-        FOREIGN KEY (property_type_key)
-        REFERENCES dbo.Dim_PropertyType(property_type_key),
-
-    CONSTRAINT FK_Listing_Project
-        FOREIGN KEY (project_key)
-        REFERENCES dbo.Dim_Project(project_key),
-
-    CONSTRAINT FK_Listing_Direction
-        FOREIGN KEY (direction_key)
-        REFERENCES dbo.Dim_Direction(direction_key),
-
-    CONSTRAINT FK_Listing_Segment
-        FOREIGN KEY (segment_key)
-        REFERENCES dbo.Dim_Segment(segment_key)
-);
-GO
-
----Tạo bảng Fact_Listing_Detail
-CREATE TABLE dbo.Fact_Listing_Detail (
-    fact_id INT PRIMARY KEY,
-    name NVARCHAR(300) NULL,
-    description_raw NVARCHAR(MAX) NULL,
-
-    CONSTRAINT FK_Listing_Detail
-        FOREIGN KEY (fact_id)
-        REFERENCES dbo.Fact_Listing(fact_id)
-);
-GO
-
-
---3.4. Tạo bảng cấu hình ngưỡng phân khúc 
-CREATE TABLE dbo.Cfg_Segment_Threshold (
-    version INT NOT NULL,
-    effective_date DATE NOT NULL,
-    segment_key INT NOT NULL,
-    min_price_per_m2 DECIMAL(19,2) NULL,
-    max_price_per_m2 DECIMAL(19,2) NULL,
-
-    CONSTRAINT PK_Cfg_Segment_Threshold
-        PRIMARY KEY (version, segment_key),
-
-    CONSTRAINT FK_Cfg_Segment
-        FOREIGN KEY (segment_key)
-        REFERENCES dbo.Dim_Segment(segment_key)
-);
-GO
-
-
--- Dim_Date: thành viên không xác định
-INSERT INTO dbo.Dim_Date (date_key)
-VALUES (-1);
-
--- Dim_Time: thành viên không xác định
-INSERT INTO dbo.Dim_Time (time_key, day_period)
-VALUES (-1, N'Không xác định');
-
--- Dim_Location: thành viên không xác định
-SET IDENTITY_INSERT dbo.Dim_Location ON;
-
-INSERT INTO dbo.Dim_Location
-(location_key, province_name, district_name, ward_name, street_name)
-VALUES (-1, N'Không xác định', N'Không xác định',
-        N'Không xác định', N'Không xác định');
-
-SET IDENTITY_INSERT dbo.Dim_Location OFF;
-
--- Dim_PropertyType
-SET IDENTITY_INSERT dbo.Dim_PropertyType ON;
-
-INSERT INTO dbo.Dim_PropertyType
-(property_type_key, property_type_name, property_type_group)
-VALUES (-1, N'Không xác định', N'Không xác định');
-
-SET IDENTITY_INSERT dbo.Dim_PropertyType OFF;
-
--- Dim_Project: -1 và 0
-SET IDENTITY_INSERT dbo.Dim_Project ON;
-
-INSERT INTO dbo.Dim_Project (project_key, project_name)
-VALUES
-(-1, N'Không xác định'),
-(0, N'Nhà lẻ (Không thuộc dự án)');
-
-SET IDENTITY_INSERT dbo.Dim_Project OFF;
-
--- Dim_Direction
-SET IDENTITY_INSERT dbo.Dim_Direction ON;
-
-INSERT INTO dbo.Dim_Direction
-(direction_key, house_direction, direction_group)
-VALUES (-1, N'Không xác định', N'Không xác định');
-
-SET IDENTITY_INSERT dbo.Dim_Direction OFF;
-
--- Dim_Segment
-INSERT INTO dbo.Dim_Segment
-(segment_key, segment_name, sort_order)
-VALUES
-(-1, N'Không xác định', 0),
-(1, N'Phân khúc thấp', 1),
-(2, N'Trung bình', 2),
-(3, N'Cao cấp', 3),
-(4, N'Rất cao', 4);
-GO
-
+-- Kiem tra ten bang
 SELECT TABLE_NAME
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_TYPE = 'BASE TABLE'
 ORDER BY TABLE_NAME;
 
+-- Kiểm tra tên database 
+SELECT DB_NAME() AS CurrentDatabase;
 
--- Kiểm tra tên database và số lượng bản ghi các bảng
-SELECT
-    DB_NAME() AS CurrentDatabase;
-
+-- Số lượng bản ghi các bảng
 SELECT
     s.name AS SchemaName,
     t.name AS TableName,
@@ -379,28 +133,8 @@ IF OBJECT_ID('dbo.Fact_Listing', 'U') IS NOT NULL
 IF OBJECT_ID('dbo.Fact_Listing_Detail', 'U') IS NOT NULL
     EXEC('SELECT TOP 5 * FROM dbo.Fact_Listing_Detail');
 
-SELECT
-    TABLE_NAME,
-    COLUMN_NAME,
-    DATA_TYPE,
-    CHARACTER_MAXIMUM_LENGTH,
-    NUMERIC_PRECISION,
-    NUMERIC_SCALE,
-    IS_NULLABLE
-FROM INFORMATION_SCHEMA.COLUMNS
-ORDER BY TABLE_NAME, ORDINAL_POSITION;
-
-SELECT
-    s.name AS SchemaName,
-    t.name AS TableName
-FROM sys.tables t
-JOIN sys.schemas s
-    ON t.schema_id = s.schema_id
-ORDER BY t.name;
 
 -- sript dim date  
-USE DW_BinhDuong_RealEstate;
-
 ;WITH DateList AS
 (
     SELECT CAST('2025-01-01' AS DATE) AS full_date
@@ -495,22 +229,6 @@ FROM dbo.Staging_RealEstate
 WHERE price > 0
   AND area > 0;
 
----Lưu ngưỡng vào Cfg_Segment_Threshold
-INSERT INTO dbo.Cfg_Segment_Threshold
-(
-    version,
-    effective_date,
-    segment_key,
-    min_price_per_m2,
-    max_price_per_m2
-)
-VALUES
-(1, '2025-01-01', 1, 0, 24280575.5395683),
-(1, '2025-01-01', 2, 24280575.5395683, 36666666.6666667),
-(1, '2025-01-01', 3, 36666666.6666667, 47972972.972973),
-(1, '2025-01-01', 4, 47972972.972973, NULL);
-
-
 SELECT *
 FROM dbo.Cfg_Segment_Threshold
 ORDER BY version, segment_key;
@@ -582,7 +300,6 @@ DBCC CHECKIDENT ('dbo.Dim_Project', RESEED, 0);
 DBCC CHECKIDENT ('dbo.Dim_Direction', RESEED, 0);
 GO
 
-
 -- kiem tra so dong 
 SELECT 'Staging_RealEstate' AS TableName, COUNT(*) AS TotalRows
 FROM dbo.Staging_RealEstate
@@ -625,10 +342,10 @@ ORDER BY ORDINAL_POSITION;
 
 EXEC sp_help 'dbo.Fact_Listing_Detail';
 
+
+
 SELECT 'Fact_Listing' AS TableName, COUNT(*) AS TotalRows
 FROM dbo.Fact_Listing
-
-
 
 SELECT 'Fact_Listing_Detail', COUNT(*)
 FROM dbo.Fact_Listing_Detail;
@@ -701,7 +418,6 @@ SELECT
 FROM dbo.Staging_RealEstate;
 
 --- 
-
 WITH SegmentData AS
 (
     SELECT
@@ -778,7 +494,7 @@ ORDER BY fact_id;
 SELECT COUNT(*) AS Total_Fact
 FROM Fact_Listing;
 
--- 2. Kiểm tra các bảng Dimension
+-- Kiểm tra các bảng Dimension
 SELECT 'Dim_Date' AS TableName, COUNT(*) AS TotalRows
 FROM Dim_Date
 UNION ALL
@@ -790,27 +506,49 @@ SELECT 'Dim_PropertyType', COUNT(*) FROM Dim_PropertyType
 UNION ALL
 SELECT 'Dim_Project', COUNT(*) FROM Dim_Project;
 
-SELECT COUNT(*) AS Missing_Location
-FROM Fact_Listing f
-LEFT JOIN Dim_Location d
-    ON f.location_key = d.location_key
-WHERE d.location_key IS NULL;
+-- 2. XEM CHI TIẾT DỮ LIỆU TỪNG BẢNG DIM
+SELECT * FROM dbo.Dim_Time         ORDER BY time_key;
+SELECT * FROM dbo.Dim_PropertyType ORDER BY property_type_key;
+SELECT * FROM dbo.Dim_Direction    ORDER BY direction_key;
+SELECT * FROM dbo.Dim_Segment      ORDER BY sort_order;
+SELECT * FROM dbo.Cfg_Segment_Threshold ORDER BY version, segment_key;
 
--- Thêm cột Price_Per_M2 vào bảng Fact_Listing
-ALTER TABLE dbo.Fact_Listing
-ADD Price_Per_M2 DECIMAL(18,2) NULL;
+-- Dim_Date: Xem dòng -1, các ngày lễ và 10 ngày đầu kỳ dữ liệu
+SELECT * FROM dbo.Dim_Date
+WHERE date_key = -1 OR is_holiday = 1 OR full_date BETWEEN '2025-06-01' AND '2025-06-05'
+ORDER BY date_key;
 
-SELECT COLUMN_NAME, DATA_TYPE, NUMERIC_PRECISION, NUMERIC_SCALE
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'Fact_Listing'
-  AND COLUMN_NAME = 'Price_Per_M2';
 
-ALTER TABLE dbo.Fact_Listing
-ADD
-    Supply_Share_Pct DECIMAL(18,4) NULL,
-    Price_Growth_MoM DECIMAL(18,4) NULL;
+SELECT * FROM dbo.Dim_Project ORDER BY project_key;
+SELECT * FROM dbo.Dim_Location ORDER BY location_key;
+GO
 
-SELECT COLUMN_NAME, DATA_TYPE
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'Fact_Listing'
-AND COLUMN_NAME IN ('Supply_Share_Pct', 'Price_Growth_MoM');
+-- 3. KIỂM TRA LỖI TRƯỚC KHI ĐẨY SANG SSAS (TRÙNG KHÓA / THIẾU DÒNG -1)
+
+-- Kiểm tra các dòng mặc định (-1 và 0) đã tồn tại đủ chưa
+SELECT 'Dim_Date (-1)'      AS Kiem_Tra, COUNT(*) AS So_Luong FROM dbo.Dim_Date         WHERE date_key = -1
+UNION ALL
+SELECT 'Dim_Time (-1)',                     COUNT(*) FROM dbo.Dim_Time         WHERE time_key = -1
+UNION ALL
+SELECT 'Dim_Location (-1)',                 COUNT(*) FROM dbo.Dim_Location     WHERE location_key = -1
+UNION ALL
+SELECT 'Dim_PropertyType (-1)',             COUNT(*) FROM dbo.Dim_PropertyType WHERE property_type_key = -1
+UNION ALL
+SELECT 'Dim_Project (-1 và 0)',             COUNT(*) FROM dbo.Dim_Project      WHERE project_key IN (-1, 0)
+UNION ALL
+SELECT 'Dim_Direction (-1)',                COUNT(*) FROM dbo.Dim_Direction    WHERE direction_key = -1
+UNION ALL
+SELECT 'Dim_Segment (-1)',                  COUNT(*) FROM dbo.Dim_Segment      WHERE segment_key = -1;
+
+-- Kiểm tra trùng lặp khóa tự nhiên trong Dim_Location (nếu trả về 0 dòng là chuẩn)
+SELECT province_name, district_name, ward_name, street_name, COUNT(*) AS So_Lan_Trung
+FROM dbo.Dim_Location
+GROUP BY province_name, district_name, ward_name, street_name
+HAVING COUNT(*) > 1;
+
+-- Kiểm tra trùng lặp tên dự án trong Dim_Project (nếu trả về 0 dòng là chuẩn)
+SELECT project_name, COUNT(*) AS So_Lan_Trung
+FROM dbo.Dim_Project
+GROUP BY project_name
+HAVING COUNT(*) > 1;
+GO

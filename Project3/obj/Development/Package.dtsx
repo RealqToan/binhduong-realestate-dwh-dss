@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{DE457ECF-7616-4BD3-8BCF-6FCEE8B57405}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{84636757-ACDE-4326-BD10-5053DFD07A74}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,13 +31,25 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{E3D028F4-EBD8-47E9-A6AE-908CBE63AF6C}"
+      DTS:DTSID="{403D3EC6-1781-4799-9AB2-80A64262A4C8}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\UTH\Kho dữ liệu và hệ thống hỗ trợ ra quyết định\code\output\cleaned_binh_duong_real_estates.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\UTH\Kho dữ liệu và hệ thống hỗ trợ ra quyết định\Đồ án\output\cleaned_binh_duong_real_estates.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{E864799D-7F2F-48D5-A64E-51FC3E20F5F0}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\UTH\Kho dữ liệu và hệ thống hỗ trợ ra quyết định\Đồ án\output\cleaned_binh_duong_real_estates_v2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -88,8 +100,9 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\dim_date\Data Conversion.Inputs[Data Conversion Input].Columns[quarter_name]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
                       cachedName="quarter_name"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[quarter_name]" />
                   </inputColumns>
@@ -238,51 +251,51 @@
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[full_date]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day_of_month]"
-                      cachedDataType="ui1"
+                      cachedDataType="i4"
                       cachedName="day_of_month"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[day_of_month]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_of_month]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day_of_week]"
-                      cachedDataType="ui1"
+                      cachedDataType="i4"
                       cachedName="day_of_week"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[day_of_week]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_of_week]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day_name]"
                       cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedLength="30"
                       cachedName="day_name"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[day_name]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_name]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[week]"
-                      cachedDataType="ui1"
+                      cachedDataType="i4"
                       cachedName="week"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[week]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[week]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[month_num]"
-                      cachedDataType="ui1"
+                      cachedDataType="i4"
                       cachedName="month_num"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[month_num]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[month_num]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[month_name]"
                       cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedLength="30"
                       cachedName="month_name"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[month_name]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[month_name]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quarter_num]"
-                      cachedDataType="ui1"
+                      cachedDataType="i4"
                       cachedName="quarter_num"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quarter_num]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[quarter_num]" />
                     <inputColumn
                       refId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[year]"
-                      cachedDataType="i2"
+                      cachedDataType="i4"
                       cachedName="year"
                       externalMetadataColumnId="Package\dim_date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[year]"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]" />
@@ -420,60 +433,60 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
-    CAST(
+    CONVERT(INT,
         YEAR(s.full_date) * 10000
         + MONTH(s.full_date) * 100
         + DAY(s.full_date)
-        AS INT
     ) AS date_key,
 
-    CAST(s.full_date AS DATE) AS full_date,
+    s.full_date,
 
-    CAST(DAY(s.full_date) AS TINYINT)
-        AS day_of_month,
+    DAY(s.full_date) AS day_of_month,
 
-    CAST(
-        ((DATEDIFF(DAY, '19000101', s.full_date) % 7) + 1)
-        AS TINYINT
-    ) AS day_of_week,
+    ((DATEDIFF(DAY, '19000101', s.full_date) % 7) + 1)
+        AS day_of_week,
 
-    CAST(DATENAME(WEEKDAY, s.full_date) AS NVARCHAR(20))
-        AS day_name,
+    DATENAME(WEEKDAY, s.full_date) AS day_name,
 
-    CAST(DATEPART(ISO_WEEK, s.full_date) AS TINYINT)
-        AS week,
+    DATEPART(ISO_WEEK, s.full_date) AS week,
 
-    CAST(MONTH(s.full_date) AS TINYINT)
-        AS month_num,
+    MONTH(s.full_date) AS month_num,
 
-    CAST(DATENAME(MONTH, s.full_date) AS NVARCHAR(20))
-        AS month_name,
+    DATENAME(MONTH, s.full_date) AS month_name,
 
-    CAST(DATEPART(QUARTER, s.full_date) AS TINYINT)
-        AS quarter_num,
+    DATEPART(QUARTER, s.full_date) AS quarter_num,
+
+    CONCAT('Q', DATEPART(QUARTER, s.full_date))
+        AS quarter_name,
+
+    YEAR(s.full_date) AS year,
 
     CAST(
-        CONCAT('Q', DATEPART(QUARTER, s.full_date))
-        AS NVARCHAR(20)
-    ) AS quarter_name,
+        CASE s.full_date
+            WHEN '2025-01-01' THEN N'Tết Dương lịch'
+            WHEN '2025-04-07' THEN N'Giỗ Tổ Hùng Vương'
+            WHEN '2025-04-30' THEN N'Ngày Giải phóng miền Nam 30/4'
+            WHEN '2025-05-01' THEN N'Ngày Quốc tế Lao động 1/5'
+            WHEN '2025-09-02' THEN N'Ngày Quốc khánh 2/9'
+            ELSE NULL
+        END AS NVARCHAR(50)
+    ) AS holiday_name,
 
-    CAST(YEAR(s.full_date) AS SMALLINT)
-        AS year,
-
-    CAST(NULL AS NVARCHAR(50))
-        AS holiday_name,
-
-    CAST(0 AS BIT)
-        AS is_holiday
+    CAST(
+        CASE
+            WHEN s.full_date IN ('2025-01-01', '2025-04-07', '2025-04-30', '2025-05-01', '2025-09-02')
+                THEN 1
+            ELSE 0
+        END AS BIT
+    ) AS is_holiday
 
 FROM Staging_RealEstate s
 
+LEFT JOIN Dim_Date d
+    ON s.full_date = d.full_date
+
 WHERE s.full_date IS NOT NULL
-AND NOT EXISTS (
-    SELECT 1
-    FROM Dim_Date d
-    WHERE d.full_date = s.full_date
-);</property>
+  AND d.full_date IS NULL;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -530,7 +543,7 @@ AND NOT EXISTS (
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_of_month]"
-                      dataType="ui1"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_of_month]"
@@ -539,7 +552,7 @@ AND NOT EXISTS (
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_of_week]"
-                      dataType="ui1"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_of_week]"
@@ -552,13 +565,13 @@ AND NOT EXISTS (
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_name]"
-                      length="20"
+                      length="30"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[day_name]"
                       name="day_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[week]"
-                      dataType="ui1"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[week]"
@@ -567,7 +580,7 @@ AND NOT EXISTS (
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[month_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[month_num]"
@@ -580,13 +593,13 @@ AND NOT EXISTS (
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[month_name]"
-                      length="20"
+                      length="30"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[month_name]"
                       name="month_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[quarter_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quarter_num]"
@@ -595,17 +608,18 @@ AND NOT EXISTS (
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[quarter_name]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quarter_name]"
-                      length="20"
+                      length="13"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[quarter_name]"
                       name="quarter_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]"
-                      dataType="i2"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
@@ -645,42 +659,43 @@ AND NOT EXISTS (
                       name="full_date" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_of_month]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="day_of_month" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_of_week]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="day_of_week" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[day_name]"
                       dataType="wstr"
-                      length="20"
+                      length="30"
                       name="day_name" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[week]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="week" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[month_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="month_num" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[month_name]"
                       dataType="wstr"
-                      length="20"
+                      length="30"
                       name="month_name" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quarter_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       name="quarter_num" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quarter_name]"
-                      dataType="wstr"
-                      length="20"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
                       name="quarter_name" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
-                      dataType="i2"
+                      dataType="i4"
                       name="year" />
                     <externalMetadataColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[holiday_name]"
@@ -711,50 +726,51 @@ AND NOT EXISTS (
                       name="full_date" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_of_month]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_of_month]"
                       name="day_of_month" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_of_week]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_of_week]"
                       name="day_of_week" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_name]"
                       dataType="wstr"
-                      length="20"
+                      length="30"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[day_name]"
                       name="day_name" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[week]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[week]"
                       name="week" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[month_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[month_num]"
                       name="month_num" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[month_name]"
                       dataType="wstr"
-                      length="20"
+                      length="30"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[month_name]"
                       name="month_name" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quarter_num]"
-                      dataType="ui1"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quarter_num]"
                       name="quarter_num" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quarter_name]"
-                      dataType="wstr"
-                      length="20"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quarter_name]"
                       name="quarter_name" />
                     <outputColumn
                       refId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
-                      dataType="i2"
+                      dataType="i4"
                       lineageId="Package\dim_date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
                       name="year" />
                     <outputColumn
@@ -1952,11 +1968,25 @@ WHERE project_name IS NOT NULL
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
-    property_type_name,
-    CAST(NULL AS NVARCHAR(50)) AS property_type_group
-FROM dbo.Staging_RealEstate
-WHERE property_type_name IS NOT NULL
-  AND LTRIM(RTRIM(property_type_name)) &lt;&gt; '';</property>
+    CAST(LTRIM(RTRIM(s.property_type_name)) AS NVARCHAR(50)) AS property_type_name,
+
+    CAST(
+        CASE LTRIM(RTRIM(s.property_type_name))
+            WHEN N'Căn hộ chung cư'      THEN N'BĐS ở'
+            WHEN N'Nhà'                  THEN N'BĐS ở'
+            WHEN N'Biệt thự/Nhà liền kề' THEN N'BĐS ở'
+            WHEN N'Đất'                  THEN N'BĐS đất'
+            WHEN N'Shophouse'            THEN N'BĐS thương mại'
+            ELSE N'Không xác định'
+        END AS NVARCHAR(50)
+    ) AS property_type_group
+
+FROM dbo.Staging_RealEstate s
+LEFT JOIN dbo.Dim_PropertyType d
+    ON LTRIM(RTRIM(s.property_type_name)) = d.property_type_name
+WHERE s.property_type_name IS NOT NULL
+  AND LTRIM(RTRIM(s.property_type_name)) &lt;&gt; N''
+  AND d.property_type_key IS NULL;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2018,7 +2048,7 @@ WHERE property_type_name IS NOT NULL
                     <externalMetadataColumn
                       refId="Package\Dim_PropertyType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[property_type_name]"
                       dataType="wstr"
-                      length="255"
+                      length="50"
                       name="property_type_name" />
                     <externalMetadataColumn
                       refId="Package\Dim_PropertyType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[property_type_group]"
@@ -2035,7 +2065,7 @@ WHERE property_type_name IS NOT NULL
                     <outputColumn
                       refId="Package\Dim_PropertyType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[property_type_name]"
                       dataType="wstr"
-                      length="255"
+                      length="50"
                       lineageId="Package\Dim_PropertyType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[property_type_name]"
                       name="property_type_name" />
                     <outputColumn
@@ -2070,6 +2100,23 @@ WHERE property_type_name IS NOT NULL
               startId="Package\Dim_PropertyType\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Segment"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{243D08FA-8BFE-4039-9C05-D60677490DE5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Segment"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E56489B0-C80E-45A7-8D62-53025755431F}"
+          SQLTask:SqlStatementSource="INSERT INTO dbo.Dim_Segment (segment_key, segment_name, sort_order)&#xA;SELECT v.segment_key, v.segment_name, v.sort_order&#xA;FROM (VALUES&#xA;    (-1, N'Không xác định', 0),&#xA;    ( 1, N'Phân khúc thấp',  1),&#xA;    ( 2, N'Trung bình',     2),&#xA;    ( 3, N'Cao cấp',        3),&#xA;    ( 4, N'Rất cao',        4)&#xA;) AS v(segment_key, segment_name, sort_order)&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM dbo.Dim_Segment d&#xA;    WHERE d.segment_key = v.segment_key&#xA;);&#xA;&#xA;&#xA;DELETE FROM dbo.Cfg_Segment_Threshold WHERE version = 1;&#xA;&#xA;INSERT INTO dbo.Cfg_Segment_Threshold (version, effective_date, segment_key, min_price_per_m2, max_price_per_m2)&#xA;SELECT 1, '2025-01-01', 1, 0, q.P25 FROM (&#xA;    SELECT DISTINCT&#xA;        PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P25,&#xA;        PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P50,&#xA;        PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P75&#xA;    FROM dbo.Staging_RealEstate&#xA;    WHERE price &gt; 0 AND area &gt; 0 AND is_outlier = 0&#xA;) q&#xA;UNION ALL&#xA;SELECT 1, '2025-01-01', 2, q.P25, q.P50 FROM (&#xA;    SELECT DISTINCT&#xA;        PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P25,&#xA;        PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P50,&#xA;        PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P75&#xA;    FROM dbo.Staging_RealEstate&#xA;    WHERE price &gt; 0 AND area &gt; 0 AND is_outlier = 0&#xA;) q&#xA;UNION ALL&#xA;SELECT 1, '2025-01-01', 3, q.P50, q.P75 FROM (&#xA;    SELECT DISTINCT&#xA;        PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P25,&#xA;        PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P50,&#xA;        PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P75&#xA;    FROM dbo.Staging_RealEstate&#xA;    WHERE price &gt; 0 AND area &gt; 0 AND is_outlier = 0&#xA;) q&#xA;UNION ALL&#xA;SELECT 1, '2025-01-01', 4, q.P75, NULL FROM (&#xA;    SELECT DISTINCT&#xA;        PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P25,&#xA;        PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P50,&#xA;        PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price / NULLIF(area, 0)) OVER () AS P75&#xA;    FROM dbo.Staging_RealEstate&#xA;    WHERE price &gt; 0 AND area &gt; 0 AND is_outlier = 0&#xA;) q;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2524,97 +2571,6 @@ WHERE post_hour BETWEEN 0 AND 23;</property>
                       refId="Package\Fact_Listing\DC_Total_Listings.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Fact_Listing\DC_Total_Listings.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Listing\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input].Columns[price]"
-                      cachedDataType="numeric"
-                      cachedName="price"
-                      cachedPrecision="19"
-                      cachedScale="2"
-                      lineageId="Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[price]" />
-                    <inputColumn
-                      refId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input].Columns[area]"
-                      cachedDataType="numeric"
-                      cachedName="area"
-                      cachedPrecision="12"
-                      cachedScale="2"
-                      lineageId="Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[area]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Output].Columns[Price_Per_M2]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Output].Columns[Price_Per_M2]"
-                      name="Price_Per_M2"
-                      precision="18"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">([ISNULL](#{Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[area]}) || #{Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[area]} == 0 || [ISNULL](#{Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[price]})) ? (DT_NUMERIC,18,2)0 : (DT_NUMERIC,18,2)((DT_R8)#{Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[price]} / (DT_R8)#{Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[area]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(ISNULL(area) || area == 0 || ISNULL(price)) ? (DT_NUMERIC,18,2)0 : (DT_NUMERIC,18,2)((DT_R8)price / (DT_R8)area)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3984,14 +3940,6 @@ where [refTable].[time_key] = ?</property>
                       cachedName="StagingID"
                       externalMetadataColumnId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_staging_id]"
                       lineageId="Package\Fact_Listing\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]" />
-                    <inputColumn
-                      refId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Price_Per_M2]"
-                      cachedDataType="numeric"
-                      cachedName="Price_Per_M2"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price_Per_M2]"
-                      lineageId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Output].Columns[Price_Per_M2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4063,24 +4011,6 @@ where [refTable].[time_key] = ?</property>
                       refId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_staging_id]"
                       dataType="i4"
                       name="source_staging_id" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price_Per_M2]"
-                      dataType="numeric"
-                      name="Price_Per_M2"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supply_Share_Pct]"
-                      dataType="numeric"
-                      name="Supply_Share_Pct"
-                      precision="18"
-                      scale="4" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price_Growth_MoM]"
-                      dataType="numeric"
-                      name="Price_Growth_MoM"
-                      precision="18"
-                      scale="4" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4604,14 +4534,9 @@ FROM dbo.Staging_RealEstate;</property>
               startId="Package\Fact_Listing\DC_Clean_Direction.Outputs[Derived Column Output]" />
             <path
               refId="Package\Fact_Listing.Paths[Derived Column Output1]"
-              endId="Package\Fact_Listing\Derived Column.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Fact_Listing\DC_Total_Listings.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Fact_Listing.Paths[Derived Column Output2]"
               endId="Package\Fact_Listing\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Fact_Listing\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Fact_Listing\DC_Total_Listings.Outputs[Derived Column Output]" />
             <path
               refId="Package\Fact_Listing.Paths[Lookup Match Output]"
               endId="Package\Fact_Listing\Lookup_Dim_Time.Inputs[Lookup Input]"
@@ -4761,7 +4686,7 @@ FROM dbo.Staging_RealEstate;</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">cleaned_binh_duong_real_estates$</property>
+                  name="OpenRowset">cleaned_data_v2$</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4788,8 +4713,8 @@ FROM dbo.Staging_RealEstate;</property>
               <connections>
                 <connection
                   refId="Package\Load staging\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4959,6 +4884,15 @@ FROM dbo.Staging_RealEstate;</property>
                       lineageId="Package\Load staging\Excel Source.Outputs[Excel Source Output].Columns[is_outlier]"
                       name="is_outlier"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load staging\Excel Source.Outputs[Excel Source Output].Columns[price_per_m2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load staging\Excel Source.Outputs[Excel Source Output].ExternalColumns[price_per_m2]"
+                      lineageId="Package\Load staging\Excel Source.Outputs[Excel Source Output].Columns[price_per_m2]"
+                      name="price_per_m2"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5038,6 +4972,10 @@ FROM dbo.Staging_RealEstate;</property>
                       refId="Package\Load staging\Excel Source.Outputs[Excel Source Output].ExternalColumns[is_outlier]"
                       dataType="r8"
                       name="is_outlier" />
+                    <externalMetadataColumn
+                      refId="Package\Load staging\Excel Source.Outputs[Excel Source Output].ExternalColumns[price_per_m2]"
+                      dataType="r8"
+                      name="price_per_m2" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -5138,6 +5076,11 @@ FROM dbo.Staging_RealEstate;</property>
                       dataType="r8"
                       lineageId="Package\Load staging\Excel Source.Outputs[Excel Source Error Output].Columns[is_outlier]"
                       name="is_outlier" />
+                    <outputColumn
+                      refId="Package\Load staging\Excel Source.Outputs[Excel Source Error Output].Columns[price_per_m2]"
+                      dataType="r8"
+                      lineageId="Package\Load staging\Excel Source.Outputs[Excel Source Error Output].Columns[price_per_m2]"
+                      name="price_per_m2" />
                     <outputColumn
                       refId="Package\Load staging\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -5523,11 +5466,11 @@ FROM dbo.Staging_RealEstate;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{328B1125-86FF-4CC3-A760-79940CE49121}"
+      DTS:DTSID="{33E8B5C2-8879-4261-B8A3-1C2B0D0DD8DD}"
       DTS:From="Package\Dim_Direction"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Fact_Listing" />
+      DTS:To="Package\Dim_Segment" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -5536,6 +5479,14 @@ FROM dbo.Staging_RealEstate;</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Load staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{1982B3AC-A80C-436B-8147-10E17AC4D32E}"
+      DTS:From="Package\Dim_Segment"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Fact_Listing" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5550,51 +5501,55 @@ FROM dbo.Staging_RealEstate;</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Delete Old Data"
+          TopLeft="303.749986421317,18.2928562705857" />
+        <NodeLayout
           Size="124,42.6666666666667"
           Id="Package\dim_date"
-          TopLeft="45.6249979604036,108.10526197092" />
+          TopLeft="196.517848357825,108.10526197092" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Dim_Direction"
-          TopLeft="219.374990193174,417.578943266598" />
+          TopLeft="314.017843105166,260.650379320964" />
         <NodeLayout
           Size="145.333333333334,42.6666666666667"
           Id="Package\Dim_Location"
-          TopLeft="28.7499987147749,259.999997145251" />
+          TopLeft="309.37498616986,164.45000170143" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\Dim_Project"
-          TopLeft="21.8749990221114,417.368416470009" />
+          TopLeft="558.482117891047,263.225566677256" />
         <NodeLayout
           Size="168,42"
           Id="Package\Dim_PropertyType"
-          TopLeft="10.6249995250255,335.947364732417" />
+          TopLeft="536.249976027758,162.490230146355" />
         <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\Dim_Time"
-          TopLeft="44.374998016283,172.42105073843" />
+          TopLeft="110.446423634089,168.706765201255" />
         <NodeLayout
           Size="136,42.6666666666667"
           Id="Package\Fact_Listing"
-          TopLeft="262.499988265336,340.771926924738" />
+          TopLeft="27.2321416397714,259.52193079904" />
         <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Load staging"
-          TopLeft="41.8749981280414,37.6315785341814" />
+          TopLeft="437.410694731932,102.63157543474" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="110.083331377556,80.2982452008481">
+          TopLeft="437.410694731932,126.701752036163">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.8070167700722"
+              EndConnector="-116.892846374107,0"
               Start="0,0"
-              End="0,20.3070167700722">
+              End="-109.392846374107,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.3070167700722" />
+                    End="-109.392846374107,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5605,30 +5560,24 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="45.6249979604036,129.438595304254">
+          TopLeft="196.517848357825,129.438595304253">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1.24999994412065,64.3157887675096"
+              EndConnector="-22.071424723736,39.2681698970017"
               Start="0,0"
-              End="-8.74999994412065,64.3157887675096">
+              End="-22.071424723736,31.7681698970017">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-19.7499999441206,0" />
+                    End="-18.071424723736,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.7499999441206,0"
-                    Point2="-23.7499999441206,0"
-                    Point3="-23.7499999441206,4" />
+                    Point1="-18.071424723736,0"
+                    Point2="-22.071424723736,0"
+                    Point3="-22.071424723736,4" />
                   <mssgle:LineSegment
-                    End="-23.7499999441206,60.3157887675096" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.7499999441206,60.3157887675096"
-                    Point2="-23.7499999441206,64.3157887675096"
-                    Point3="-19.7499999441206,64.3157887675096" />
-                  <mssgle:LineSegment
-                    End="-8.74999994412065,64.3157887675096" />
+                    End="-22.071424723736,31.7681698970017" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5639,18 +5588,18 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="104.895831698862,215.087717405097">
+          TopLeft="238.446423634089,187.911716784676">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.9122797401548"
+              EndConnector="70.9285625357717,0"
               Start="0,0"
-              End="0,37.4122797401548">
+              End="63.4285625357717,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.4122797401548" />
+                    End="63.4285625357717,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5661,18 +5610,18 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="98.0208324532335,302.666663811918">
+          TopLeft="454.708319503194,184.636782590559">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.2807009204988"
+              EndConnector="81.541656524564,0"
               Start="0,0"
-              End="0,25.7807009204988">
+              End="74.041656524564,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7807009204988" />
+                    End="74.041656524564,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5683,18 +5632,18 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="92.5833326069018,377.947364732417">
+          TopLeft="623.699380292735,204.490230146355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.421051737592"
+              EndConnector="0,58.7353365309007"
               Start="0,0"
-              End="0,31.921051737592">
+              End="0,51.2353365309007">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.921051737592" />
+                    End="0,51.2353365309007" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5705,18 +5654,18 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="159.208332355445,438.807013201637">
+          TopLeft="558.482117891047,283.271306332443">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.1666578377288,0"
+              EndConnector="-97.7976081192139,0"
               Start="0,0"
-              End="52.6666578377288,0">
+              End="-90.2976081192139,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.6666578377288,0" />
+                    End="-90.2976081192139,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5726,31 +5675,31 @@ FROM dbo.Staging_RealEstate;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="292.708323526507,417.578943266598">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="381.083319754651,60.9595229372524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.7916647388287,-34.1403496751933"
+              EndConnector="126.994041643948,41.6720524974877"
               Start="0,0"
-              End="37.7916647388287,-26.6403496751933">
+              End="126.994041643948,34.1720524974877">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-13.0701748375967" />
+                    End="0,16.8360262487438" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-13.0701748375967"
-                    Point2="0,-17.0701748375967"
-                    Point3="4,-17.0701748375967" />
+                    Point1="0,16.8360262487438"
+                    Point2="0,20.8360262487438"
+                    Point3="4,20.8360262487438" />
                   <mssgle:LineSegment
-                    End="33.7916647388287,-17.0701748375967" />
+                    End="122.994041643948,20.8360262487438" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.7916647388287,-17.0701748375967"
-                    Point2="37.7916647388287,-17.0701748375967"
-                    Point3="37.7916647388287,-21.0701748375967" />
+                    Point1="122.994041643948,20.8360262487438"
+                    Point2="126.994041643948,20.8360262487438"
+                    Point3="126.994041643948,24.8360262487438" />
                   <mssgle:LineSegment
-                    End="37.7916647388287,-26.6403496751933" />
+                    End="126.994041643948,34.1720524974877" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5760,23 +5709,57 @@ FROM dbo.Staging_RealEstate;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Delete Old Data"
-          TopLeft="266.249988097698,39.6499981093407" />
+          Size="145.333333333334,42.6666666666667"
+          Id="Package\Dim_Segment"
+          TopLeft="169.374992428348,314.599984998704" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="266.249988097698,59.9741216550944">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="314.017843105166,281.983712654297">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-83.0416566363232,0"
+              EndConnector="-71.9761840101516,32.6162723444062"
               Start="0,0"
-              End="-75.5416566363232,0">
+              End="-71.9761840101516,25.1162723444062">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-75.5416566363232,0" />
+                    End="-67.9761840101516,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.9761840101516,0"
+                    Point2="-71.9761840101516,0"
+                    Point3="-71.9761840101516,4" />
+                  <mssgle:LineSegment
+                    End="-71.9761840101516,25.1162723444062" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="169.374992428348,335.933318332037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.1428507885763,-33.7447208663303"
+              Start="0,0"
+              End="-74.1428507885763,-26.2447208663303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-70.1428507885763,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.1428507885763,0"
+                    Point2="-74.1428507885763,0"
+                    Point3="-74.1428507885763,-4" />
+                  <mssgle:LineSegment
+                    End="-74.1428507885763,-26.2447208663303" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5794,43 +5777,43 @@ FROM dbo.Staging_RealEstate;</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\dim_date\OLE DB Source"
+          TopLeft="143.999995708466,99.9999970197678" />
+        <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\dim_date\OLE DB Destination"
           TopLeft="452.999986499548,274.999991804362" />
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\dim_date\OLE DB Source"
-          TopLeft="143.999995708466,99.9999970197678" />
         <NodeLayout
           Size="158.666666666667,42.6666666666667"
           Id="Package\dim_date\Data Conversion"
           TopLeft="254.999992400408,195.999994158745" />
         <EdgeLayout
           Id="Package\dim_date.Paths[OLE DB Source Output]"
-          TopLeft="221.333329041799,142.666663686435">
+          TopLeft="219.333329041799,142.666663686434">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112.999996691942,53.3333304723105"
+              EndConnector="114.999996691942,53.3333304723105"
               Start="0,0"
-              End="112.999996691942,45.8333304723105">
+              End="114.999996691942,45.8333304723105">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.6666652361552" />
+                    End="0,22.6666652361553" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.6666652361552"
-                    Point2="0,26.6666652361552"
-                    Point3="4,26.6666652361552" />
+                    Point1="0,22.6666652361553"
+                    Point2="0,26.6666652361553"
+                    Point3="4,26.6666652361553" />
                   <mssgle:LineSegment
-                    End="108.999996691942,26.6666652361552" />
+                    End="110.999996691942,26.6666652361553" />
                   <mssgle:CubicBezierSegment
-                    Point1="108.999996691942,26.6666652361552"
-                    Point2="112.999996691942,26.6666652361552"
-                    Point3="112.999996691942,30.6666652361552" />
+                    Point1="110.999996691942,26.6666652361553"
+                    Point2="114.999996691942,26.6666652361553"
+                    Point3="114.999996691942,30.6666652361553" />
                   <mssgle:LineSegment
-                    End="112.999996691942,45.8333304723105" />
+                    End="114.999996691942,45.8333304723105" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5901,15 +5884,15 @@ FROM dbo.Staging_RealEstate;</property>
     design-time-name="Package\Dim_Direction">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\Dim_Direction\OLE DB Destination"
-          TopLeft="350.999989539385,327.999990224838" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Dim_Direction\OLE DB Source"
           TopLeft="352.99998947978,254.999992400408" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Dim_Direction\OLE DB Destination"
+          TopLeft="350.999989539385,327.999990224838" />
         <EdgeLayout
           Id="Package\Dim_Direction.Paths[OLE DB Source Output]"
           TopLeft="430.333322813114,297.666659067075">
@@ -5941,7 +5924,9 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5972,15 +5957,15 @@ FROM dbo.Staging_RealEstate;</property>
     design-time-name="Package\Dim_Location">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Dim_Location\OLE DB Source"
-          TopLeft="175.999994754791,183.999994516373" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Dim_Location\OLE DB Destination"
           TopLeft="435.999987006188,186.999994426966" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Dim_Location\OLE DB Source"
+          TopLeft="175.999994754791,183.999994516373" />
         <EdgeLayout
           Id="Package\Dim_Location.Paths[OLE DB Source Output]"
           TopLeft="330.666661421458,206.833327805003">
@@ -6000,7 +5985,9 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6031,15 +6018,15 @@ FROM dbo.Staging_RealEstate;</property>
     design-time-name="Package\Dim_Project">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Dim_Project\OLE DB Source"
-          TopLeft="197.99999409914,187.999994397164" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Dim_Project\OLE DB Destination"
           TopLeft="338.999989897013,312.999990671873" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Dim_Project\OLE DB Source"
+          TopLeft="197.99999409914,187.999994397164" />
         <EdgeLayout
           Id="Package\Dim_Project.Paths[OLE DB Source Output]"
           TopLeft="275.333327432474,230.66666106383">
@@ -6071,7 +6058,9 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6173,7 +6162,7 @@ FROM dbo.Staging_RealEstate;</property>
     design-time-name="Package\Dim_Time">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Dim_Time\OLE DB Source"
@@ -6213,7 +6202,9 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6248,109 +6239,107 @@ FROM dbo.Staging_RealEstate;</property>
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Fact_Listing\OLE DB Destination"
-          TopLeft="528.642843308194,186.285710010358" />
+          TopLeft="557.601175346989,108.719047042358" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Time"
-          TopLeft="167.99999499321,200.999994009733" />
+          TopLeft="295.499989293516,197.96666082104" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Direction"
-          TopLeft="464.99998614192,584.666649262111" />
+          TopLeft="540.208316113179,345.899993980726" />
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_PropertyType"
-          TopLeft="259.999992251396,381.999988615513" />
+          TopLeft="283.749991189688,351.666656728586" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Segment"
-          TopLeft="754.999977499247,602.333316912254" />
+          TopLeft="546.041653507079,258.91666662097" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="164,42.6666666666667"
           Id="Package\Fact_Listing\DC_Total_Listings"
-          TopLeft="747.999977707863,396.333323587974" />
+          TopLeft="565.916652514289,186.38333359917" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Date"
-          TopLeft="124.99999627471,101.999996960163" />
+          TopLeft="299.999988451601,116.516662934621" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Location"
-          TopLeft="207.999993801117,303.999990940094" />
+          TopLeft="291.12499008514,271.71665914615" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\Fact_Listing\DC_Clean_Direction"
-          TopLeft="588.999982446433,499.999986112118" />
+          TopLeft="541.499984569848,424.816656363805" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Fact_Listing\OLE DB Source"
-          TopLeft="17.9999994635582,16.9999994933605" />
+          TopLeft="117.99999499321,113.416661562522" />
         <NodeLayout
           Size="178.666666666667,42.6666666666667"
           Id="Package\Fact_Listing\Lookup_Dim_Project"
-          TopLeft="332.999990075827,486.999985486269" />
+          TopLeft="301.124991500751,422.866655211051" />
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output]"
-          TopLeft="208.99999627471,144.66666362683">
+          TopLeft="382.083322205892,159.183329601288">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.6666653851669,56.3333303829035"
+              EndConnector="0,38.7833312197525"
               Start="0,0"
-              End="43.6666653851669,48.8333303829035">
+              End="0,31.2833312197525">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.1666651914517" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1666651914517"
-                    Point2="0,28.1666651914517"
-                    Point3="4,28.1666651914517" />
-                  <mssgle:LineSegment
-                    End="39.6666653851669,28.1666651914517" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.6666653851669,28.1666651914517"
-                    Point2="43.6666653851669,28.1666651914517"
-                    Point3="43.6666653851669,32.1666651914517" />
-                  <mssgle:LineSegment
-                    End="43.6666653851669,48.8333303829035" />
+                    End="0,31.2833312197525" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-26.3580540261665,33.1666651914517,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,9.83697810987625,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact_Listing.Paths[Derived Column Output]"
-          TopLeft="677.666649113099,542.666652778785">
+          Id="Package\Fact_Listing.Paths[Derived Column Output1]"
+          TopLeft="646.425580597306,186.38333359917">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-118.666662971179,41.9999964833263"
+              EndConnector="0,-34.997619890145"
               Start="0,0"
-              End="-118.666662971179,34.4999964833263">
+              End="0,-27.497619890145">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.9999982416631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.9999982416631"
-                    Point2="0,20.9999982416631"
-                    Point3="-4,20.9999982416631" />
+                    End="0,-27.497619890145" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Listing.Paths[Derived Column Output]"
+          TopLeft="632.187483674847,424.816656363805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-36.2499957164128"
+              Start="0,0"
+              End="0,-28.7499957164128">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-114.666662971179,20.9999982416631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-114.666662971179,20.9999982416631"
-                    Point2="-118.666662971179,20.9999982416631"
-                    Point3="-118.666662971179,24.9999982416631" />
-                  <mssgle:LineSegment
-                    End="-118.666662971179,34.4999964833263" />
+                    End="0,-28.7499957164128" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6361,30 +6350,18 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[OLE DB Source Output]"
-          TopLeft="95.3333327968915,59.6666661600272">
+          TopLeft="272.666661659877,136.299995581905">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.666663477818,42.3333308001361"
+              EndConnector="27.3333267917239,0"
               Start="0,0"
-              End="113.666663477818,34.8333308001361">
+              End="19.8333267917239,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.166665400068" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.166665400068"
-                    Point2="0,21.166665400068"
-                    Point3="4,21.166665400068" />
-                  <mssgle:LineSegment
-                    End="109.666663477818,21.166665400068" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109.666663477818,21.166665400068"
-                    Point2="113.666663477818,21.166665400068"
-                    Point3="113.666663477818,25.166665400068" />
-                  <mssgle:LineSegment
-                    End="113.666663477818,34.8333308001361" />
+                    End="19.8333267917239,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6395,290 +6372,146 @@ FROM dbo.Staging_RealEstate;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output6]"
-          TopLeft="848.999977499247,602.333316912254">
+          TopLeft="643.979153010684,258.91666662097">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.6666664580505,-163.333326657613"
+              EndConnector="0,-29.8666663551331"
               Start="0,0"
-              End="-17.6666664580505,-155.833326657613">
+              End="0,-22.3666663551331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-77.6666633288067" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-77.6666633288067"
-                    Point2="0,-81.6666633288067"
-                    Point3="-4,-81.6666633288067" />
-                  <mssgle:LineSegment
-                    End="-13.6666664580505,-81.6666633288067" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.6666664580505,-81.6666633288067"
-                    Point2="-17.6666664580505,-81.6666633288067"
-                    Point3="-17.6666664580505,-85.6666633288067" />
-                  <mssgle:LineSegment
-                    End="-17.6666664580505,-155.833326657613" />
+                    End="0,-22.3666663551331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-57.0247199477752,-76.6666633288067,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-16.9880206775666,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output5]"
-          TopLeft="652.99998614192,605.999982595444">
+          TopLeft="637.124984810129,345.899993980726">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.999991357327,17.6666676501432"
+              EndConnector="0,-44.3166606930896"
               Start="0,0"
-              End="94.499991357327,17.6666676501432">
+              End="0,-36.8166606930896">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.9999956786635,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46.9999956786635,0"
-                    Point2="50.9999956786635,0"
-                    Point3="50.9999956786635,4" />
-                  <mssgle:LineSegment
-                    End="50.9999956786635,13.6666676501432" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.9999956786635,13.6666676501432"
-                    Point2="50.9999956786635,17.6666676501432"
-                    Point3="54.9999956786635,17.6666676501432" />
-                  <mssgle:LineSegment
-                    End="94.499991357327,17.6666676501432" />
+                    End="0,-36.8166606930896" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.80860895991348,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-24.2130178465448,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output4]"
-          TopLeft="511.666656742494,508.333318819603">
+          TopLeft="479.791658167417,445.174989120762">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.333325703939,13.0000006258487"
+              EndConnector="61.708326402431,0"
               Start="0,0"
-              End="69.833325703939,13.0000006258487">
+              End="54.208326402431,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="34.6666628519695,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.6666628519695,0"
-                    Point2="38.6666628519695,0"
-                    Point3="38.6666628519695,4" />
-                  <mssgle:LineSegment
-                    End="38.6666628519695,9.00000062584871" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.6666628519695,9.00000062584871"
-                    Point2="38.6666628519695,13.0000006258487"
-                    Point3="42.6666628519695,13.0000006258487" />
-                  <mssgle:LineSegment
-                    End="69.833325703939,13.0000006258487" />
+                    End="54.208326402431,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-9.52472386678053,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-21.0872235175345,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output3]"
-          TopLeft="364.666658918063,424.66665528218">
+          TopLeft="389.437491345219,394.333323395252">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.6666644910971,62.3333302040896"
+              EndConnector="0,28.533331815799"
               Start="0,0"
-              End="57.6666644910971,54.8333302040896">
+              End="0,21.033331815799">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1666651020448" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1666651020448"
-                    Point2="0,31.1666651020448"
-                    Point3="4,31.1666651020448" />
-                  <mssgle:LineSegment
-                    End="53.6666644910971,31.1666651020448" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.6666644910971,31.1666651020448"
-                    Point2="57.6666644910971,31.1666651020448"
-                    Point3="57.6666644910971,35.1666651020448" />
-                  <mssgle:LineSegment
-                    End="57.6666644910971,54.8333302040896" />
+                    End="0,21.033331815799" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.3580544732015,36.1666651020448,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,4.7119784078995,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output2]"
-          TopLeft="300.666660467784,346.666657606761">
+          TopLeft="386.104157304081,314.383325812817">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63.9999984502792,35.3333310087522"
+              EndConnector="0,37.2833309157689"
               Start="0,0"
-              End="63.9999984502792,27.8333310087522">
+              End="0,29.7833309157689">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.6666655043761" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.6666655043761"
-                    Point2="0,17.6666655043761"
-                    Point3="4,17.6666655043761" />
-                  <mssgle:LineSegment
-                    End="59.9999984502792,17.6666655043761" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.9999984502792,17.6666655043761"
-                    Point2="63.9999984502792,17.6666655043761"
-                    Point3="63.9999984502792,21.6666655043761" />
-                  <mssgle:LineSegment
-                    End="63.9999984502792,27.8333310087522" />
+                    End="0,29.7833309157689" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-16.1913874936104,22.6666655043761,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,9.08697795788445,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact_Listing.Paths[Lookup Match Output1]"
-          TopLeft="252.666661659877,243.6666606764">
+          TopLeft="381.979156355995,240.633327487707">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="47.9999988079071,60.3333302636941"
+              EndConnector="0,31.0833316584431"
               Start="0,0"
-              End="47.9999988079071,52.8333302636941">
+              End="0,23.5833316584431">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1666651318471" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.1666651318471"
-                    Point2="0,30.1666651318471"
-                    Point3="4,30.1666651318471" />
-                  <mssgle:LineSegment
-                    End="43.9999988079071,30.1666651318471" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.9999988079071,30.1666651318471"
-                    Point2="47.9999988079071,30.1666651318471"
-                    Point3="47.9999988079071,34.1666651318471" />
-                  <mssgle:LineSegment
-                    End="47.9999988079071,52.8333302636941" />
+                    End="0,23.5833316584431" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.1913873147965,35.1666651318471,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,5.98697832922155,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Fact_Listing\Derived Column"
-          TopLeft="566.666643676305,295.04760983785" />
-        <EdgeLayout
-          Id="Package\Fact_Listing.Paths[Derived Column Output1]"
-          TopLeft="831.333311041196,396.333323587974">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-187.333334031558,-58.6190470834571"
-              Start="0,0"
-              End="-187.333334031558,-51.1190470834571">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-25.3095235417286" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-25.3095235417286"
-                    Point2="0,-29.3095235417286"
-                    Point3="-4,-29.3095235417286" />
-                  <mssgle:LineSegment
-                    End="-183.333334031558,-29.3095235417286" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-183.333334031558,-29.3095235417286"
-                    Point2="-187.333334031558,-29.3095235417286"
-                    Point3="-187.333334031558,-33.3095235417286" />
-                  <mssgle:LineSegment
-                    End="-187.333334031558,-51.1190470834571" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Listing.Paths[Derived Column Output2]"
-          TopLeft="643.999977009638,295.04760983785">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-28.0238003681105,-66.095233160825"
-              Start="0,0"
-              End="-28.0238003681105,-58.595233160825">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-29.0476165804125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-29.0476165804125"
-                    Point2="0,-33.0476165804125"
-                    Point3="-4,-33.0476165804125" />
-                  <mssgle:LineSegment
-                    End="-24.0238003681105,-33.0476165804125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.0238003681105,-33.0476165804125"
-                    Point2="-28.0238003681105,-33.0476165804125"
-                    Point3="-28.0238003681105,-37.0476165804125" />
-                  <mssgle:LineSegment
-                    End="-28.0238003681105,-58.595233160825" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6870,11 +6703,7 @@ FROM dbo.Staging_RealEstate;</property>
     design-time-name="Package\Load staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\Load staging\OLE DB Destination"
-          TopLeft="349.374984381721,230.57894483671" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Load staging\Excel Source"
@@ -6883,6 +6712,10 @@ FROM dbo.Staging_RealEstate;</property>
           Size="158.666666666667,42.6666666666667"
           Id="Package\Load staging\Data Conversion"
           TopLeft="199.999991059304,173.105261257233" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Load staging\OLE DB Destination"
+          TopLeft="349.374984381721,230.57894483671" />
         <EdgeLayout
           Id="Package\Load staging.Paths[Excel Source Output]"
           TopLeft="243.291662168379,129.438595304254">
@@ -6908,7 +6741,9 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6936,14 +6771,16 @@ FROM dbo.Staging_RealEstate;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load staging\OLE DB Destination">
+    design-time-name="Package\Load staging\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6956,7 +6793,7 @@ FROM dbo.Staging_RealEstate;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load staging\Excel Source">
+    design-time-name="Package\Load staging\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

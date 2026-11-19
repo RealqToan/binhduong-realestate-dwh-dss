@@ -1,0 +1,44 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\\u0110\u1ED3 \u00E1n\\SSAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\\u0110\u1ED3 \u00E1n\\SSAS\\DW Binh Duong Real Estate.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DW Binh Duong Real Estate.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DW Binh Duong Real Estate.cube [Design]",
+              "DocumentMoniker": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\\u0110\u1ED3 \u00E1n\\SSAS\\DW Binh Duong Real Estate.cube",
+              "RelativeDocumentMoniker": "DW Binh Duong Real Estate.cube",
+              "ToolTip": "D:\\UTH\\Kho d\u1EEF li\u1EC7u v\u00E0 h\u1EC7 th\u1ED1ng h\u1ED7 tr\u1EE3 ra quy\u1EBFt \u0111\u1ECBnh\\\u0110\u1ED3 \u00E1n\\SSAS\\DW Binh Duong Real Estate.cube [Design]",
+              "RelativeToolTip": "DW Binh Duong Real Estate.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-19T14:00:45.823Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

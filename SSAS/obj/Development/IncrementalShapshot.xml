@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>zqrqwQLX6xZTb8y3fgIh3Xq5L0I=11/19/2026 8:53:40 PM11/19/2026 8:53:39 PM</TimeStamp>
+        <ID>
+          <String>DW Binh Duong Real Estate</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>Xmg5+N/Rj2Yt9VhefedH/bstJEY=11/19/2026 9:00:45 PM11/19/2026 8:56:24 PM</TimeStamp>
+        <ID>
+          <String>DW Binh Duong Real Estate</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>w/X7F0FGb9kqrlQS1NoQn+iqXdk=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Direction</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IASULp9auqosdfU4eA2jh+hYnAE=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3JR/TqDUFTOMjcIH65QCvKeYUPQ=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fxx3KDdjzrdo2VUrhYNYXN0hVc4=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Property Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>FZNtWiEf0QJqjSs1ohKJ7alMgWI=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>YhgTgQZpKM5z/tZcXxTX8EhxtNM=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Segment</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>juRkDB/r6LQcyI//AOIZh0sjnYs=11/19/2026 9:22:11 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Project</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>nCe/pGdtrkid0jh8jKUcgkxbPuU=11/19/2026 9:37:23 PM11/19/2026 9:00:45 PMj/Q2bHOJt8Nhx1mwlwmpGzzuo1w=11/19/2026 9:00:45 PM11/19/2026 9:00:45 PM</TimeStamp>
+        <ID>
+          <String>DW Binh Duong Real Estate</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>LDOdQumWUTuWY9CJzVNcFvd1TkQ=11/19/2026 4:03:04 PM11/19/2026 4:03:04 PM</TimeStamp>
+      <ID>
+        <String>SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2026-11-19T14:37:30.926667Z</LastDeployed>
+</DeploymentSnapshot>
